@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{  
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: "Poppins";
+}
+@keyframes fadeinout1 {
+    100%,0% { opacity: 1; }
+    0% { opacity: 0; }
+  }
+ 
+.InChatActive{
+    display:none;
+    animation: fadeIn 20s; 
+    animation: fadeinout1 1s linear ; 
+}
+@keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+.ChatBotContaner{
+    background-color:white;
+    width: 500px;
+    position:fixed;
+    bottom:100px;
+    right:40px;
+    border-radius: 15px;
+    box-shadow: antiquewhite;
+    overflow: hidden;
+    transition-duration: 10ms;
+    animation: fadeinout 1s linear ;
+}
+.ChatBotName{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: greenyellow;
+    font-size: 1rem;
+    color:black
+}
+
+.ChatBox{
+    height: 510px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    list-style: none;
+}
+.ChatBotBody{
+    padding-top: 20px;
+    overflow-wrap: break-word;
+}
+.ChatBox .chat{
+    display: flex;
+
+}
+.ChatBotInput{
+    padding-left: 15px;
+}
+.ChatBox .OutGoingMessage{
+   justify-content: flex-end;
+   margin-right: 5px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+.chat{
+    white-space: pre-wrap;
+}
+.ChatBox .IncomingMessage p{
+    background-color: greenyellow;
+    border-radius: 10px 10px 10px 0px;
+    padding:12px  16px ;
+    white-space: pre-wrap;
+    /* border-radius: 10px 10px 0 10px; */
+    max-width: 75%;
+    color: #151414;
+    font-size: 0.95rem;
+    margin-left: 5px;
+}
+.ChatBox .OutGoingMessage p{
+    background-color: rgb(22, 78, 121);
+    border-radius: 10px 10px 0px 10px;
+    padding:12px  16px;
+    white-space: pre-wrap;
+    /* padding: 12px 16px;
+    border-radius: 10px 10px 0 10px; */
+    max-width: 75%;
+    color: #fff;
+    font-size: 0.95rem;
+}
+.ChatBotLoader {
+    display: block;
+    gap: 5px;
+    position: relative;
+    bottom: 80px;
+    width: 100%;
+    background: #fff;
+    padding: 3px 20px;
+   
+  }
+.ChatBotInput {
+    display: block;
+    gap: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 3px 20px;
+    border-top: 1px solid #ddd;
+  }
+.ChatBotInput textarea {
+    height: 55px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    max-height: 180px;
+    padding: 15px 15px 15px 0;
+    font-size: 0.95rem;
+  }
+  .ChatboxInp{
+    display: flex;
+  }
+
+  .ChatBotInput .SendButton {
+    align-self: flex-end;
+    color: #724ae8;
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    font-size: 1.35rem;
+  }
+  .ChatBotInput .Speech {
+    align-self: flex-end;
+    color: #724ae8;
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    font-size: 1.35rem;
+  }
+  .ChatBotInput textarea:valid ~ .SendButton {
+    visibility: visible;
+  }
+  .Chatbotfooter{
+    font-size: .5rem;
+  }
+.chatbot-toggler {
+    position: fixed;
+    bottom: 30px;
+    right: 35px;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: greenyellow;
+    transition: all 0.2s ease;
+  }
