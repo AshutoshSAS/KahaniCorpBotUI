@@ -13,6 +13,9 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 export default function ChatBot() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('Request_Id');
+  console.log("requestid",myParam)
   const [closeButton, setclosebutton] = useState(false);
   const [Loader, setLoader] = useState(false);
   const [UserInputTextValue, setUserInputTextValue] = useState("");
@@ -43,7 +46,7 @@ export default function ChatBot() {
       var ScrollChatEnd = document.querySelector(".ChatBox");
       ScrollChatEnd.scrollTop = ScrollChatEnd.scrollHeight;
       setLoader(true);
-      let IncomingResponse = await BotResponseApi(input);
+      let IncomingResponse = await BotResponseApi(input,myParam);
 
       Chatmessage(IncomingResponse, "IncomingMessage");
       ScrollChatEnd.scrollTop = ScrollChatEnd.scrollHeight;
